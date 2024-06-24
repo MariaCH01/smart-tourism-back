@@ -79,6 +79,7 @@ def get_categories():
         return Response(json.dumps(response, ensure_ascii=False), mimetype='application/json')
 
     except Exception as e:
+        print(f"Error: {e}")
         response = {
         'message': f"error: {e}"
         }
@@ -157,6 +158,7 @@ def get_places():
         return Response(json.dumps(response, ensure_ascii=False), mimetype='application/json')
 
     except Exception as e:
+        print(f"Error: {e}")
         response = {
         'message': f"error: {e}"
         }
@@ -223,6 +225,7 @@ def get_info_place():
         return Response(json.dumps(response, ensure_ascii=False), mimetype='application/json')
 
     except Exception as e:
+        print(f"Error: {e}")
         response = {
         'message': f"error: {e}"
         }
