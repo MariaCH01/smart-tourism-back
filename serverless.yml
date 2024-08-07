@@ -1,0 +1,33 @@
+service: smart-tourims-back-nodejs
+frameworkVersion: '3'
+
+
+custom:
+  dotenv: 
+    path: .env
+
+    
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-offline
+  
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - http:
+          path: get_categories
+          method: get
+      - http:
+          path: get_places
+          method: get
+      - http:
+          path: get_info_place
+          method: get
+
