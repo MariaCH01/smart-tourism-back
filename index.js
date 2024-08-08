@@ -174,7 +174,7 @@ app.get('/get_categories', async (req, res) => {
       const subcategories = req.query.subcategories || 'ALL';
   
       let sqlQuery = `
-        SELECT r.nombre, c.name as category, s.name as subcategory, r.latitud, r.longitud, r.descripcion, r.pais, r.municipio, r.departamento, r.direccion, r.telefono, r.email, r.url, r.red_social, r.image, r.resena, r.hora_apertura, r.menu, r.destacado
+        SELECT r.nombre, c.name as category, s.name as subcategory, r.latitud, r.longitud, r.descripcion, r.pais, r.municipio, r.departamento, r.direccion, r.telefono, r.email, r.url, r.red_social, r.image, r.resena, r.hora_apertura, r.menu, r.destacado, r.md
         FROM restaurants r
         JOIN restaurant_category rc ON r.id = rc.restaurant_id
         JOIN categories c ON rc.category_id = c.id
